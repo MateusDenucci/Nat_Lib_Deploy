@@ -1,0 +1,31 @@
+{% load static %}
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>{% block title %}Default Title{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'core/css/bootstrap.css' %}">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block stylesheet %}{% endblock %}
+  </head>
+  <body>
+    <header style="text-align: center; margin-bottom: 10px;">
+      <img src="{% static 'core/images/header_logo.jpg' %}" class="center">
+    </header>
+    <main>
+      {% block content %}
+      {% endblock %}
+    </main>
+    <footer>
+
+    </footer>
+    {# Including jQuery library #}
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    {# Including MouseTrap library for keyboard shortcuts #}
+    <script src="//cdnjs.cloudflare.com/ajax/libs/mousetrap/1.4.6/mousetrap.min.js"></script>
+    {# For the Javascript code of that page exclusivly #}
+    {% block javascript %}{% endblock %}
+  </body>
+</html>

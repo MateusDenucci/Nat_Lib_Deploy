@@ -1,0 +1,25 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block title %} Nat Libs {% endblock %}
+
+{% block stylesheet %}
+  <link rel="stylesheet" type="text/css" href="{% static 'core/css/result.css' %}">
+{% endblock %}
+
+{% block javascript %}
+  <script src="{% static 'core/js/index.js' %}"></script>
+{% endblock %}
+
+{% block content %}
+  <div id="result">
+    <p>Resultado:</p>
+    <p>{{ text }}</p>
+    <form action="/core/generate_doc/">
+        <input type="submit" class="btn-sm btn-success" value="Generate DocX" />
+    </form>
+    <form action="/core/try_again/">
+        <input type="submit" class="btn-sm btn-danger" value="Try Again!" />
+    </form>
+  </div>
+{% endblock %}
